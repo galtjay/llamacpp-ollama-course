@@ -1,0 +1,6 @@
+services:
+  open-webui:
+    image: ghcr.io/open-webui/open-webui:main
+    volumes:
+      - ./open-webui:/app/backend/data
+    network_mode: "host"

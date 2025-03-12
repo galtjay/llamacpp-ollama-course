@@ -1,0 +1,19 @@
+# docker-compose up -d 
+# 使用docker-compose运行llamacpp
+# 也可以本地安装，参考：https://github.com/ggml-org/llama.cpp
+services:
+  llama:
+    image: ghcr.io/ggml-org/llama.cpp:full
+    volumes:
+      - ./models:/models
+    network_mode: "host" 
+    entrypoint: ["/usr/bin/sleep", "3600"]
+    # command: --run -m /models/DeepSeek-R1-Distill-Qwen-1.5B-Q4_K_M.gguf  -p "你好，请问ollama是什么？" -n 512 # 运行模型，带参数
+
+# 启动之后测试 llama-cli
+# ./llama-cli  -m /models/DeepSeek-R1-Distill-Qwen-1.5B-Q4_K_M.gguf
+# ./llama-cli  -m /models/DeepSeek-R1-Distill-Qwen-1.5B-Q4_K_M.gguf  --threads 16 --prompt '<｜User｜>What is 1+1?<｜Assistant｜>'
+
+# 启动之后测试 ./llama-server -m /models/DeepSeek-R1-Distill-Qwen-1.5B-Q4_K_M.gguf --port 8080
+# 基本的网页用户界面可以通过浏览器访问: http://localhost:8080
+# 聊天完成端点: http://localhost:8080/v1/chat/completions
