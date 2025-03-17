@@ -16,10 +16,10 @@ completion = client.chat.completions.create(model="deepseek-r1:1.5b",
 print(completion)
 print("--------------------------------")
 # https://python.langchain.com/docs/integrations/chat/ollama/
-llm = ChatOllama(model="deepseek-r1:1.5b")
+llm = ChatOllama(model="yylx:latest")
 
 messages = [
-    ("human", "你好,1+1等于多少?"),
+    ("human", "你好,1+1等于多少?")
 ]
 
 response = llm.invoke(messages)
