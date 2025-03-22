@@ -1,4 +1,3 @@
-import openai
 from openai import OpenAI
 
 API_BASE = "http://localhost:8080/v1/"

@@ -7,8 +7,8 @@ services:
     volumes:
       - ../models:/models
     network_mode: "host" 
-    entrypoint: ["/usr/bin/sleep", "3600"]
-    # command: --run -m /models/DeepSeek-R1-Distill-Qwen-1.5B-Q4_K_M.gguf  -p "What is 1+1?" -n 512 # 运行模型，带参数
+    # entrypoint: ["/usr/bin/sleep", "3600"]
+    command: --run -m /models/DeepSeek-R1-Distill-Qwen-1.5B-Q4_K_M.gguf  -p "What is 1+1?" -n 512 # 运行模型，带参数
 
 # 启动之后测试 llama-cli
 # ./llama-cli  -m /models/DeepSeek-R1-Distill-Qwen-1.5B-Q4_K_M.gguf
